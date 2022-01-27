@@ -10,7 +10,7 @@ public class PlayerImmediateJumpController : MonoBehaviour {
     private void Start() {
         rigidbody = GetComponent<Rigidbody>();
         playerInputController = GetComponent<PlayerInputController>();
-        groundChecker = GetComponentInChildren<GroundChecker>();
+        groundChecker = GetComponent<GroundChecker>();
     }
     void Update() {
         if (playerInputController.JumpInput && groundChecker.IsGrounded) {
