@@ -3,14 +3,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 	
 	[SerializeField] private float moveSpeed;
+	private PlayerInputController playerInputController;
 	private new Rigidbody rigidbody;
 
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody>();
+		playerInputController = GetComponent<PlayerInputController>();
 	}
 
 	private void Update() {
-		var moveInput = Input.GetAxis("Horizontal");
-		rigidbody.velocity = new Vector3(moveInput * moveSpeed, rigidbody.velocity.y, 0);
+		rigidbody.velocity = new Vector3(playerInputController.MoveInput * moveSpeed, rigidbody.velocity.y, 0);
 	}
 }
