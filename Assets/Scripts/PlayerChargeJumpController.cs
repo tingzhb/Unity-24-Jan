@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerChargeJumpController : MonoBehaviour
@@ -18,9 +16,7 @@ public class PlayerChargeJumpController : MonoBehaviour
         playerInputController = GetComponent<PlayerInputController>();
         groundChecker = GetComponent<GroundChecker>();
     }
-    void Update() {
-        HandleChargeJump();
-    }
+    void Update() => HandleChargeJump();
     private void HandleChargeJump() {
         if (playerInputController.JumpInput && groundChecker.IsGrounded) {
             jumpCharge += Time.deltaTime / chargeTime;

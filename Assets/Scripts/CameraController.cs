@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
@@ -11,9 +10,7 @@ public class CameraController : MonoBehaviour {
     private void Awake() {
         offset = transform.position - player.position;
     }
-    private void Update() {
-        MoveCameraToPlayer();
-    }
+    private void Update() => MoveCameraToPlayer();
     private void MoveCameraToPlayer() {
         Vector3 targetPosition = player.position + offset;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);

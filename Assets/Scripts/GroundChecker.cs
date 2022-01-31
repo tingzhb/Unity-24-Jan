@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class GroundChecker : MonoBehaviour {
@@ -7,9 +6,7 @@ public class GroundChecker : MonoBehaviour {
 	[SerializeField] private float groundCheckRadius = 0.5f;
 	[SerializeField] private float groundCheckLength = 1f;
 	[SerializeField] private LayerMask groundLayers;
-	private void Update() {
-		CheckIfGrounded();
-	}
+	private void Update() => CheckIfGrounded();
 	private void CheckIfGrounded() {
 		var ray = new Ray(transform.position, Vector3.down);
 		IsGrounded = Physics.SphereCast(ray, groundCheckRadius, groundCheckLength, groundLayers);
