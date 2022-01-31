@@ -310,8 +310,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690169109}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.041444, y: 2.9288287, z: -0.077512264}
-  m_LocalScale: {x: 20, y: 1, z: 3}
+  m_LocalPosition: {x: 6.02, y: 2.9288287, z: -0.077512264}
+  m_LocalScale: {x: 38.74, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1353826981}
@@ -947,10 +947,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4276761055856290921, guid: 44cda4a7ff2f71a408cfd2e848de472b, type: 3}
-      propertyPath: groundCheckLength
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 6320721700091172977, guid: 44cda4a7ff2f71a408cfd2e848de472b, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -1008,14 +1004,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1376868763, guid: a959a59a9e72d5d42b3daeeb43fa63ea, type: 3}
-      propertyPath: maximumJumpForce
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 1376868763, guid: a959a59a9e72d5d42b3daeeb43fa63ea, type: 3}
-      propertyPath: minimumJumpForce
-      value: 250
-      objectReference: {fileID: 0}
     - target: {fileID: 6320721700091172977, guid: a959a59a9e72d5d42b3daeeb43fa63ea, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1062,10 +1050,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6320721700091172981, guid: a959a59a9e72d5d42b3daeeb43fa63ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320721700091172985, guid: a959a59a9e72d5d42b3daeeb43fa63ea, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
