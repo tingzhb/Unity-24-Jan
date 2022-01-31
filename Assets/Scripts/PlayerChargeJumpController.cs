@@ -8,20 +8,20 @@ public class PlayerChargeJumpController : MonoBehaviour
 
     private float jumpCharge;
     private GroundChecker groundChecker;
-    private PlayerInputController playerInputController;
+    private CommandContainer commandContainer;
     private new Rigidbody rigidbody;
 
     private void Start() {
         rigidbody = GetComponent<Rigidbody>();
-        playerInputController = GetComponent<PlayerInputController>();
+        commandContainer = GetComponentInChildren<CommandContainer>();
         groundChecker = GetComponent<GroundChecker>();
     }
     void Update() => HandleChargeJump();
     private void HandleChargeJump() {
-        if (playerInputController.JumpInput && groundChecker.IsGrounded) {
+        if (commandContainer.jumpCommand && groundChecker.IsGrounded) {
             jumpCharge += Time.deltaTime / chargeTime;
         }
-        if (playerInputController.JumpInputUp && groundChecker.IsGrounded) {
+        if (commandContainer.jumpCommandUp && groundChecker.IsGrounded) {
             var jumpForce = Mathf.Lerp(minimumJumpForce, maximumJumpForce, jumpCharge);
             rigidbody.AddForce(Vector3.up * jumpForce);
             jumpCharge = 0f;

@@ -4,17 +4,17 @@ public class PlayerImmediateJumpController : MonoBehaviour {
     
     [SerializeField] private float jumpForce;
     private GroundChecker groundChecker;
-    private PlayerInputController playerInputController;
+    private CommandContainer commandContainer;
     private new Rigidbody rigidbody;
 
     private void Start() {
         rigidbody = GetComponent<Rigidbody>();
-        playerInputController = GetComponent<PlayerInputController>();
+        commandContainer = GetComponentInChildren<CommandContainer>();
         groundChecker = GetComponent<GroundChecker>();
     }
     void Update() => HandleImmediateJump();
     private void HandleImmediateJump() {
-        if (playerInputController.JumpInputDown && groundChecker.IsGrounded) {
+        if (commandContainer.jumpCommandDown && groundChecker.IsGrounded) {
             rigidbody.AddForce(Vector3.up * jumpForce);
         }
     }

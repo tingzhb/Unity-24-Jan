@@ -1,17 +1,31 @@
+using System;
 using UnityEngine;
 
 public class PlayerInputController : MonoBehaviour {
-	
-	public float MoveInput { get; private set; }
-	public bool JumpInput { get; private set; }
-	public bool JumpInputDown { get; private set; }
-	public bool JumpInputUp { get; private set; }
+	private CommandContainer commandContainer;
+	private float walkInput;
+	private bool jumpInputDown;
+	private bool jumpInputUp;
+	private bool jumpInput;
 
-	private void Update() => GetInput();
+	private void Start() {
+		commandContainer = GetComponent<CommandContainer>();
+	}
+	private void Update() {
+		GetInput();
+		SetCommands();
+	}
 	private void GetInput() {
-		MoveInput = Input.GetAxis("Horizontal");
-		JumpInputDown = Input.GetButtonDown("Jump");
-		JumpInputUp = Input.GetButtonUp("Jump");
-		JumpInput = Input.GetButton("Jump");
+		walkInput = Input.GetAxis("Horizontal");
+		jumpInputDown = Input.GetButtonDown("Jump");
+		jumpInputUp = Input.GetButtonUp("Jump");
+		jumpInput = Input.GetButton("Jump");
+	}
+
+	private void SetCommands() {
+		commandContainer.walkCommand = walkInput;
+		commandContainer.jumpCommandDown = jumpInputDown;
+		commandContainer.jumpCommandUp = jumpInputUp;
+		commandContainer.jumpCommand = jumpInput;
 	}
 }
