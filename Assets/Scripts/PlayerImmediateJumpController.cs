@@ -13,6 +13,9 @@ public class PlayerImmediateJumpController : MonoBehaviour {
         groundChecker = GetComponent<GroundChecker>();
     }
     void Update() {
+        HandleImmediateJump();
+    }
+    private void HandleImmediateJump() {
         if (playerInputController.JumpInputDown && groundChecker.IsGrounded) {
             rigidbody.AddForce(Vector3.up * jumpForce);
         }

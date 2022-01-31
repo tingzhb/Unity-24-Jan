@@ -8,6 +8,9 @@ public class PlayerInputController : MonoBehaviour {
 	public bool JumpInputUp { get; private set; }
 
 	private void Update() {
+		GetInput();
+	}
+	private void GetInput() {
 		MoveInput = Input.GetAxis("Horizontal");
 		JumpInputDown = Input.GetButtonDown("Jump");
 		JumpInputUp = Input.GetButtonUp("Jump");

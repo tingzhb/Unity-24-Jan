@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerWalkController : MonoBehaviour {
 	
 	[SerializeField] private float moveSpeed;
 	private PlayerInputController playerInputController;
@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour {
 		playerInputController = GetComponent<PlayerInputController>();
 	}
 
-	private void Update() {
+	private void Update() => HandleWalking();
+	private void HandleWalking() {
 		rigidbody.velocity = new Vector3(playerInputController.MoveInput * moveSpeed, rigidbody.velocity.y, 0);
 	}
 }

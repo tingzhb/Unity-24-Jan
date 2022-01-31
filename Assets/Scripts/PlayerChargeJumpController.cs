@@ -19,6 +19,9 @@ public class PlayerChargeJumpController : MonoBehaviour
         groundChecker = GetComponent<GroundChecker>();
     }
     void Update() {
+        HandleChargeJump();
+    }
+    private void HandleChargeJump() {
         if (playerInputController.JumpInput && groundChecker.IsGrounded) {
             jumpCharge += Time.deltaTime / chargeTime;
         }
